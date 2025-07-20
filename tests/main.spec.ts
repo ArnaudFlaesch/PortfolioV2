@@ -35,7 +35,7 @@ it("handles not found pages for routes that don't match the middleware", async (
 });
 
 it('sets caching headers', async ({request}) => {
-  for (const pathname of ['/en', '/en/pathnames', '/de', '/de/pfadnamen']) {
+  for (const pathname of ['/en', '/en/cv', '/de', '/de/pfadnamen']) {
     expect((await request.get(pathname)).headers()['cache-control']).toContain(
       's-maxage=31536000'
     );
@@ -68,9 +68,9 @@ it('sets a cookie when necessary', async ({page}) => {
 
   await page
     .getByRole('combobox', {name: 'Change language'})
-    .selectOption({value: 'de'});
-  await expect(page).toHaveURL('/de');
-  expect(await getCookieValue()).toBe('NEXT_LOCALE=de');
+    .selectOption({value: 'fr'});
+  await expect(page).toHaveURL('/fr');
+  expect(await getCookieValue()).toBe('NEXT_LOCALE=fr');
 
   await page
     .getByRole('combobox', {name: 'Sprache ändern'})

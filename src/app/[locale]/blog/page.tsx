@@ -13,18 +13,11 @@ export default function PathnamesPage({params}: Props) {
   // Enable static rendering
   setRequestLocale(locale);
 
-  const t = useTranslations('PathnamesPage');
+  const t = useTranslations('cv');
 
   return (
-    <PageLayout title={t('title')}>
-      <div className="max-w-[490px]">
-        {t.rich('description', {
-          p: (chunks) => <p className="mt-4">{chunks}</p>,
-          code: (chunks) => (
-            <code className="font-mono text-white">{chunks}</code>
-          )
-        })}
-      </div>
+    <PageLayout title={t('CV-PAGE-TITLE')}>
+     cv
     </PageLayout>
   );
 }

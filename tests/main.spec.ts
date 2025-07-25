@@ -5,23 +5,23 @@ it('handles i18n routing', async ({page}) => {
   await expect(page).toHaveURL('/en');
 
   // A cookie remembers the last locale
-  await page.goto('/de');
+  await page.goto('/fr');
   await page.goto('/');
-  await expect(page).toHaveURL('/de');
+  await expect(page).toHaveURL('/fr');
   await page
     .getByRole('combobox', {name: 'Sprache ändern'})
     .selectOption({value: 'en'});
 
-  await expect(page).toHaveURL('/en');
-  page.getByRole('heading', {name: 'next-intl example'});
+  await expect(page).toHaveURL('/fr');
+  page.getByRole('heading', {name: 'Arnaud Flaesch - Développeur d\'applications'});
 });
 
 it('handles not found pages', async ({page}) => {
   await page.goto('/unknown');
   page.getByRole('heading', {name: 'Page not found'});
 
-  await page.goto('/de/unknown');
-  page.getByRole('heading', {name: 'Seite nicht gefunden'});
+  await page.goto('/fr/unknown');
+  page.getByRole('heading', {name: 'Page non trouvée'});
 });
 
 it("handles not found pages for routes that don't match the middleware", async ({
@@ -35,7 +35,7 @@ it("handles not found pages for routes that don't match the middleware", async (
 });
 
 it('sets caching headers', async ({request}) => {
-  for (const pathname of ['/en', '/en/cv', '/de', '/de/pfadnamen']) {
+  for (const pathname of ['/en', '/en/resume', '/fr', '/fr/cv']) {
     expect((await request.get(pathname)).headers()['cache-control']).toContain(
       's-maxage=31536000'
     );
@@ -46,16 +46,16 @@ it('can be used to configure metadata', async ({page}) => {
   await page.goto('/en');
   await expect(page).toHaveTitle('next-intl example');
 
-  await page.goto('/de');
-  await expect(page).toHaveTitle('next-intl Beispiel');
+  await page.goto('/fr');
+  await expect(page).toHaveTitle("Arnaud Flaesch - Développeur d'applications");
 });
 
 it('can be used to localize the page', async ({page}) => {
   await page.goto('/en');
   page.getByRole('heading', {name: 'next-intl example'});
 
-  await page.goto('/de');
-  page.getByRole('heading', {name: 'next-intl Beispiel'});
+  await page.goto('/fr');
+  page.getByRole('heading', {name: 'Arnaud Flaesch - Développeur d\'applications'});
 });
 
 it('sets a cookie when necessary', async ({page}) => {
@@ -108,26 +108,26 @@ it('serves a sitemap.xml', async ({page}) => {
   const body = await response!.body();
   expect(body.toString()).toBe(
     `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+<loc>http://localhost:3000/fr</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="http://localhost:3000/fr" />
+<xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/en" />
+</url>
 <url>
 <loc>http://localhost:3000/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="http://localhost:3000/fr" />
 <xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/en" />
-<xhtml:link rel="alternate" hreflang="de" href="http://localhost:3000/de" />
 </url>
 <url>
-<loc>http://localhost:3000/de</loc>
-<xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/en" />
-<xhtml:link rel="alternate" hreflang="de" href="http://localhost:3000/de" />
+<loc>http://localhost:3000/fr/cv</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="http://localhost:3000/fr/cv" />
+<xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/en/resume" />
 </url>
 <url>
-<loc>http://localhost:3000/en/pathnames</loc>
-<xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/en/pathnames" />
-<xhtml:link rel="alternate" hreflang="de" href="http://localhost:3000/de/pfadnamen" />
-</url>
-<url>
-<loc>http://localhost:3000/de/pfadnamen</loc>
-<xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/en/pathnames" />
-<xhtml:link rel="alternate" hreflang="de" href="http://localhost:3000/de/pfadnamen" />
+<loc>http://localhost:3000/en/resume</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="http://localhost:3000/en/cv" />
+<xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/de/resume" />
 </url>
 </urlset>
 `

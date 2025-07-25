@@ -1,4 +1,4 @@
-import { IExperience } from "../../arnaudflaesch.github.io/model/IExperience";
+import {IExperience} from '../model/IExperience';
 
 export const jobData: IExperience[] = [
   {
@@ -8,8 +8,6 @@ export const jobData: IExperience[] = [
     name: "Institut Pasteur",
     location: "Paris 15ème, France",
     logoPath: "/company-logos/institut-pasteur.svg",
-    description_fr: ["Développeur d'applications chez l'Institut Pasteur à Paris."],
-    description_en: ["Software Developer at Institut Pasteur in Paris."],
 
     description_fr: [
       "Réalisation de projets internes chez la DSI de l'Institut Pasteur.",

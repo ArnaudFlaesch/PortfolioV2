@@ -17,7 +17,7 @@ export default function PathnamesPage({params}: Props) {
 
   return (
     <PageLayout title={t('CV-PAGE-TITLE')}>
-     cv
+     contact
     </PageLayout>
   );
 }

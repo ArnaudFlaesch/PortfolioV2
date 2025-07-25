@@ -1,12 +1,10 @@
 {
-  "name": "example-app-router",
+  "name": "arnaudflaesch.github.io",
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
     "lint": "eslint src && tsc && prettier src --check",
-    "test": "pnpm run test:playwright && pnpm run test:jest",
     "test:playwright": "playwright test",
-    "test:jest": "jest",
     "build": "next build",
     "start": "next start"
   },

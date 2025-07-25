@@ -1,4 +1,4 @@
-import type { IRepoIcon } from "~/model/IRepoIcon";
+import {IRepoIcon} from '../model/IRepoIcon';
 
 type IProjectData = {
   name: string;

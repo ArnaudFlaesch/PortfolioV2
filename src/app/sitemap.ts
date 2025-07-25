@@ -5,7 +5,7 @@ import {routing} from '@/i18n/routing';
 import {getPathname} from '@/i18n/navigation';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [...getEntries('/'), ...getEntries('/resume')];
+  return [...getEntries('/'), ...getEntries('/resume'), ...getEntries('/blog'), ...getEntries('/projects'), ...getEntries('/contact')];
 }
 
 type Href = Parameters<typeof getPathname>[0]['href'];
@@ -25,3 +25,5 @@ function getUrl(href: Href, locale: Locale) {
   const pathname = getPathname({locale, href});
   return host + pathname;
 }
+
+export const dynamic = "force-static"

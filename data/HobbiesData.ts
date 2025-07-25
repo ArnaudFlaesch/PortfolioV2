@@ -1,4 +1,4 @@
-import { ITranslatableElement } from "../../arnaudflaesch.github.io/model/ITranslatableElement";
+import {ITranslatableElement} from '../model/ITranslatableElement';
 
 export const hobbiesList: ITranslatableElement[] = [
   {

@@ -5,7 +5,7 @@ interface ProfileSocialLink {
   labelI18nCode: string;
 }
 
-import { credlyLink, scrumOrgLink, mediumLink, linkedinLink, stackOverflowLink, githubLink } from "~/data/SiteData";
+import { credlyLink, scrumOrgLink, mediumLink, linkedinLink, stackOverflowLink, githubLink } from "../data/SiteData";
 
 export const profileSocialLinks: ProfileSocialLink[] = [
   {

@@ -14,3 +14,4 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
     theme_color: '#101E33'
   };
 }
+export const dynamic = "force-static"

@@ -1,4 +1,4 @@
-import type { ISkill } from "~/model/ISkill";
+import {ISkill} from '../model/ISkill';
 
 const frontendSkills: ISkill[] = [
   { name: "Angular 2" },

@@ -7,6 +7,9 @@ const withNextIntl = createNextIntlPlugin({
   }
 });
 
-const config: NextConfig = {};
+const config: NextConfig = {
+  output: "export",
+  basePath: process.env.PAGES_BASE_PATH,
+};
 
 export default withNextIntl(config);

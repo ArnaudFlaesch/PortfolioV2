@@ -1,4 +1,4 @@
-import type { IExperience } from "../../arnaudflaesch.github.io/model/IExperience";
+import {IExperience} from '../model/IExperience';
 
 export const formationData: IExperience[] = [
   {

@@ -1,0 +1,73 @@
+{
+
+  "SiteProfile": {
+    "AT": "chez l'",
+    "Développeur d'applications": "Développeur d'applications"
+  },
+
+  "layout": {
+    "HOME-LABEL": "Accueil",
+    "RESUME-LABEL": "CV",
+    "BLOG-LABEL": "Blog",
+    "PROJECTS-LABEL": "Projets",
+    "CONTACT-LABEL": "Contact",
+    "LINKEDIN-PROFILE": "Profil LinkedIn",
+    "GITHUB-PROFILE": "Profil GitHub",
+    "SCRUM-ORG-PROFILE": "Profil Scrum.org",
+    "CERTIFICATIONS": "Certifications",
+    "MEDIUM-PROFILE": "Profil Medium",
+    "STACK-OVERFLOW-PROFILE": "Profil Stack Overflow",
+    "PAGE-NOT-FOUND-MESSAGE": "La page que vous cherchez n'existe pas.",
+    "404-NOT-FOUND": "404: Page non trouvée"
+  },
+  "cv": {
+    "CV-PAGE-TITLE": "Curriculum Vitae",
+    "CV-PAGE-DESCRIPTION": "Le détail de mon parcours professionnel et scolaire, ainsi que mes compétences techniques et centres d'intérêts.",
+    "RESUME": "Curriculum Vitae",
+    "WORK-EXPERIENCE": "Expériences professionnelles",
+    "DOWNLOAD-RESUME": "Télécharger mon CV",
+    "SEE-MORE-EXPERIENCES": "Voir plus d'expériences",
+    "SEE-LESS-EXPERIENCES": "Voir moins d'expériences",
+    "TODAY": "Aujourd'hui",
+    "Frontend": "Frontend",
+    "Backend": "Backend",
+    "TOOLS": "Outils",
+    "EDUCATION": "Formation",
+    "SUSTAINABLE-IT-KNOWLEDGE-CERTIFICATE": "Certificat de connaissances Numérique Responsable",
+    "LANGUAGES-TOOLS": "Langages et technologies",
+    "HOBBIES": "Centres d'intérêts"
+  },
+  "Navigation": {
+    "home": "Accueil",
+    "resume": "CV",
+    "blog": "Blog",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "Error": {
+    "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",
+    "title": "Etwas ist schief gelaufen!"
+  },
+  "Footer": {
+    "DEVELOPED-WITH": "Développé avec",
+    "ICONS-BY": "Icônes de"
+  },
+  "IndexPage": {
+    "description": "Description.",
+    "title": "next-intl Beispiel"
+  },
+  "LocaleLayout": {
+    "title": "Arnaud Flaesch - Développeur d'applications"
+  },
+  "LocaleSwitcher": {
+    "label": "Sprache ändern",
+    "locale": "{locale, select, fr {\uD83C\uDDEB\uD83C\uDDF7 Français} en {\uD83C\uDDFA\uD83C\uDDF8 English} other {Inconnu}}"
+  },
+  "Manifest": {
+    "name": ""
+  },
+  "NotFoundPage": {
+    "description": "Bitte überprüfe die Addressleiste deines Browsers oder verwende die Navigation um zu einer bekannten Seite zu wechseln.",
+    "title": "Seite nicht gefunden"
+  }
+}
